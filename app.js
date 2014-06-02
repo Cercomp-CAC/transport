@@ -1,8 +1,7 @@
-var express = require('express');
-var path    = require('path');
-var routes  = require('./routes');
-
-var app     = express();
+var express = require('express'),
+    path    = require('path'),
+    routes  = require('./routes'),
+    app     = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));

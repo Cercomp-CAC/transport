@@ -1,4 +1,4 @@
 /* GET '/' */
 exports.index = function(req, res) {
-  res.render('index', { titulo: 'Transport' });
+    res.render('index', { titulo: 'Transport' });
 };

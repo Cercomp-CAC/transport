@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
-    "start": "./node_modules/.bin/nodemon app.js",
+    "start": "./node_modules/.bin/nodemon server.js",
     "test": "./node_modules/.bin/mocha --reporter spec test/*.js"
   },
   "repository": {
@@ -12,8 +12,8 @@
     "url": "https://github.com/Cercomp-CAC/transport.git"
   },
   "dependencies": {
-    "express": "3.3.3",
-    "ejs": "0.8.4"
+    "ejs": "0.8.4",
+    "express": "3.3.3"
   },
   "devDependencies": {
     "mocha": "^1.20.1",

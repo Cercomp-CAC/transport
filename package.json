@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
-    "start": "./node_modules/.bin/nodemon app.js"
+    "start": "./node_modules/.bin/nodemon app.js",
+    "test": "./node_modules/.bin/mocha --reporter spec test/*.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
     "ejs": "0.8.4"
   },
   "devDependencies": {
+    "mocha": "^1.20.1",
     "nodemon": "^1.1.1"
   }
 }

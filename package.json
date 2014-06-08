@@ -2,7 +2,7 @@
   "name": "transport",
   "description": "Sistema de viagens e veículos",
   "version": "0.0.1",
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "./node_modules/.bin/nodemon server.js",
     "test": "./node_modules/.bin/mocha --reporter spec test/*.js"

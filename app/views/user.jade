@@ -1,5 +1,7 @@
-include layouts/default.jade
-body
-  h1 Nome #{user.name}
-  p= user.age
-  p= user.fone
+extends layouts/default.jade
+
+block content
+  .container
+    h1 Nome: #{user.name}
+    p Idade: #{user.age}
+    p Fone: #{user.fone}

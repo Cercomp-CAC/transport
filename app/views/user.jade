@@ -1,10 +1,5 @@
-doctype html
-html(lang="pt-br")
-  head
-    meta(charset="UTF-8")
-    title O titulo é esse #{user.name}
-    link(rel="stylesheet" href="/stylesheets/style.css")
-  body
-    h1 Nome #{user.name}
-    p= user.age
-    p= user.fone
+include layouts/default.jade
+body
+  h1 Nome #{user.name}
+  p= user.age
+  p= user.fone

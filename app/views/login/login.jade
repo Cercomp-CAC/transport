@@ -1,11 +1,10 @@
 extends ../layouts/default.jade
 
 block content
-  .container
-    form(class="form-signin", role="form", action="/login", method="post")
-      h2(class="form-signin-heading") Please sign in
-      input(type="email", name="user[email]", class="form-control" placeholder="Email", required, autofocus)
-      input(type="password", name="user[password]", class="form-control" placeholder="Senha", required)
-      label(class="checkbox")
-        a(href="#") Cadastre-se
-      button(type="submit", class="btn btn-lg btn-primary btn-block") Login
+  form(class="form-signin", role="form", action="/login", method="post")
+    h2(class="form-signin-heading") Please sign in
+    input(type="email", name="user[email]", class="form-control" placeholder="Email", required, autofocus)
+    input(type="password", name="user[password]", class="form-control" placeholder="Senha", required)
+    label(class="checkbox")
+      a(href="#") Cadastre-se
+    button(type="submit", class="btn btn-lg btn-primary btn-block") Login

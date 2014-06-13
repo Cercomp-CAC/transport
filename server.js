@@ -6,3 +6,5 @@ require("./config/routes")(app);
 
 app.listen(3000);
 console.log('Express serving listening on port 3000');
+
+module.exports = app;

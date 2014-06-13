@@ -8,4 +8,6 @@ module.exports = function(app, express) {
 
     app.use(express.static(path.join(__dirname, '../public')));
 
+    app.use(express.logger('dev'));
+    app.use(express.bodyParser());
 };

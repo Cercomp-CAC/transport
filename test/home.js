@@ -5,7 +5,8 @@ var app     = require('../server'),
 describe('No controller home', function(){
 
     it('deve retornar status 200 ao fazer GET /', function(done) {
-        request.get('/')
+        request
+            .get('/')
             .end(function(err, res) {
                 assert.equal(res.status, 200);
             });

@@ -1,7 +1,7 @@
 module.exports = function(app) {
-    var home     = require('../app/controllers/home');
-    var register = require('../app/controllers/login');
-    var user     = require('../app/controllers/user');
+    var home     = require('../app/controllers/home'),
+        register = require('../app/controllers/login'),
+        user     = require('../app/controllers/user');
 
     app.get ('/',      home.index);
     app.get ('/login', register.login);

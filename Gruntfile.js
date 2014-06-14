@@ -7,19 +7,19 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: "bower_components/bootstrap/dist/css/*",
-                        dest: "public/stylesheets/bootstrap",
+                        dest: "public/stylesheets",
                         flatten: true
                     },
                     {
                         expand: true,
                         src: "bower_components/bootstrap/dist/js/*",
-                        dest: "public/javascripts/bootstrap",
+                        dest: "public/javascripts",
                         flatten: true
                     },
                     {
                         expand: true,
                         src: "bower_components/jquery/dist/*",
-                        dest: "public/javascripts/jquery",
+                        dest: "public/javascripts",
                         flatten: true
                     }
                 ]

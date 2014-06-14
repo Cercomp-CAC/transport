@@ -4,7 +4,9 @@ var express = require('express'),
 require('./config/express')(app, express);
 require('./config/routes')(app);
 
-app.listen(3000);
-console.log('Express serving listening on port 3000');
+var port = Number(process.env.PORT || 3000);
+app.listen(port, function() {
+    console.log('Express serving listening on port ' + port);
+});
 
 module.exports = app;

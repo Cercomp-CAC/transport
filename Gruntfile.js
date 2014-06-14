@@ -1,31 +1,33 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        copy: {
-            main: {
-                files: [
-                    {
-                        expand: true,
-                        src: "bower_components/bootstrap/dist/css/*",
-                        dest: "public/css",
-                        flatten: true
-                    },
-                    {
-                        expand: true,
-                        src: "bower_components/bootstrap/dist/js/*",
-                        dest: "public/js",
-                        flatten: true
-                    },
-                    {
-                        expand: true,
-                        src: "bower_components/jquery/dist/*",
-                        dest: "public/js",
-                        flatten: true
-                    }
-                ]
+        concat: {
+            dist: {
+                src: [
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.js'
+                ],
+                dest: 'public/js/production.js'
+            },
+            css: {
+                src: [
+                    'bower_components/bootstrap/dist/css/bootstrap.css',
+                    'public/css/style.css'
+                ],
+                dest: 'public/css/build.css'
+            }
+        },
+        uglify: {
+            build: {
+                src: 'public/js/production.js',
+                dest: 'public/js/production.min.js'
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
+    // Plugins
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.registerTask('heroku', ['concat', 'uglify']);
 };

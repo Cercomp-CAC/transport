@@ -5,7 +5,7 @@ before_script:
 - node_modules/bower/bin/bower install
 - ls -la
 script:
-- node_modules/grunt-cli/bin/grunt copy
+- node_modules/grunt-cli/bin/grunt heroku
 - ls -la public/css
 - ls -la public/js
 deploy:

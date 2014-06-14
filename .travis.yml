@@ -6,6 +6,8 @@ before_script:
 - ls -la
 script:
 - node_modules/grunt-cli/bin/grunt copy
+- ls -la public/stylesheets
+- ls -la public/javascripts
 deploy:
   app: transport-staging
   provider: heroku

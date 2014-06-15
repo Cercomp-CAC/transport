@@ -9,7 +9,9 @@ script:
 - ls -la public/css
 - ls -la public/js
 deploy:
-  app: transport-staging
+  app:
+    master: transport-staging
+    production: transport-prod
   provider: heroku
   api_key:
     secure: MF4fm+CWM3ASw9ECtO90ujy5MYw0rA96TJX7XJHkuHmq2iv6yY64JukadlgCVxVhptZhIOrvxuqvcG3VrdRdDJ1GaVbdCJn3aZ09+aQeHcKh/UQmeRPdxao8F16JVQxKuGYWeiYMAuC7BabIGw43vdxn7M4SVlMb3/uQ5HRnNnA=

@@ -10,7 +10,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/.bin/nodemon server.js",
-    "test": "node node_modules/.bin/mocha --reporter spec test/*.js"
+    "postinstall": "node node_modules/grunt-cli/bin/grunt heroku --verbose",
+    "test": "node_modules/.bin/mocha --reporter spec test/*.js"
   },
   "repository": {
     "type": "git",

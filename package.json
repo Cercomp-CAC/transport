@@ -9,8 +9,8 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "start": "node node_modules/.bin/nodemon server.js",
-    "postinstall": "node node_modules/grunt-cli/bin/grunt heroku --verbose",
+    "start": "node_modules/.bin/nodemon server.js",
+    "postinstall": "node_modules/grunt-cli/bin/grunt heroku --verbose",
     "test": "node_modules/.bin/mocha --reporter spec test/*.js"
   },
   "repository": {

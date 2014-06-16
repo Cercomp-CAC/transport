@@ -36,5 +36,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('heroku', ['shell:concat', 'concat', 'uglify']);
+    grunt.registerTask('heroku', ['shell:bower', 'concat', 'uglify']);
 };

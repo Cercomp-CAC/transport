@@ -28,5 +28,7 @@ node_modules
 bower_components
 
 public/js/production.js
+public/js/production.min.js
+public/css/build.css
 
 .DS_Store

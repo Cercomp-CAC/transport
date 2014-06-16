@@ -1,6 +1,11 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
+        shell: {
+            bower: {
+                command: 'node_modules/bower/bin/bower install'
+            }
+        },
         concat: {
             dist: {
                 src: [
@@ -27,8 +32,9 @@ module.exports = function(grunt) {
     });
 
     // Plugins
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('heroku', ['concat', 'uglify']);
+    grunt.registerTask('heroku', ['shell:concat', 'concat', 'uglify']);
 };

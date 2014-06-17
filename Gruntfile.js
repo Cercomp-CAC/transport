@@ -28,6 +28,15 @@ module.exports = function(grunt) {
                 src: 'public/js/production.js',
                 dest: 'public/js/production.min.js'
             }
+        },
+        express: {
+            prod: {
+                options: {
+                    script: 'server.js',
+                    node_env: 'production',
+                    background: false
+                }
+            }
         }
     });
 
@@ -35,6 +44,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-express-server');
 
+    grunt.registerTask('server', ['express:prod']);
     grunt.registerTask('heroku', ['shell:bower', 'concat', 'uglify']);
 };

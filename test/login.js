@@ -1,5 +1,4 @@
-var app     = require('../server')
-  , request = require('supertest')(app)
+var request = require('./test_helper')()
   , assert  = require('assert');
 
 describe('No controller login', function(){

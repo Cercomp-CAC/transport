@@ -1,5 +1,7 @@
-var express = require('express')
-  , app     = express();
+var express = require('express');
+require('express-namespace');
+
+var app = express();
 
 require('./config/express')(app, express);
 require('./config/routes')(app);

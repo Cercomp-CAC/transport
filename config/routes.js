@@ -7,4 +7,8 @@ module.exports = function(app) {
   app.get ('/login', register.login);
   app.post('/login', register.auth);
   app.get ('/user',  user.list);
+
+  app.namespace('/admin', function(){
+    app.get('/login', register.login);
+  });
 };

@@ -8,7 +8,5 @@ module.exports = function(app) {
   app.post('/login', register.auth);
   app.get ('/user',  user.list);
 
-  app.namespace('/admin', function(){
-    app.get('/login', register.login);
-  });
+  app.get('/admin/login', register.login);
 };

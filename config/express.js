@@ -4,7 +4,7 @@ module.exports = function(app, express) {
     app.set('port', process.env.PORT || 3000);
     app.set('views', process.env.PWD + '/app/views');
     app.set('view engine', 'jade');
-    if( app.get('env') === 'development' ){
+    if (app.get('env') === 'development') {
         app.use(express.logger('dev'));
     }
     app.use(express.bodyParser());

@@ -3,7 +3,7 @@ module.exports = function(app, express) {
   app.configure(function(){
     app.set('port', process.env.PORT || 3000);
     app.set('views', process.env.PWD + '/app/views');
-    app.set('view engine', 'jade');
+    app.set('view engine', 'swig');
     if( app.get('env') === 'development' ){
         app.use(express.logger('dev'));
     }

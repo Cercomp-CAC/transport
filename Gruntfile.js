@@ -41,7 +41,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // Plugins
+  // Dependencies
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');

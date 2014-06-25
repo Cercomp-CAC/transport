@@ -16,7 +16,7 @@ module.exports = function(app, express) {
         app.use(express.logger('dev'));
     }
     app.use(express.bodyParser());
-    app.use(app.router);
     app.use(express.static(config.root + '/public'));
+    app.use(app.router);
   });
 };

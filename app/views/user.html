@@ -1,7 +1,8 @@
 {% extends "./layouts/default.html" %}
 
 {% block content %}
-  <h1>Nome: {{ user.name }}</h1>
-  <p>Idade: {{ user.age }}</p>
-  <p>Fone: {{ user.fone }}</p>
+  {% for user in users %}
+    <p>Nome: {{ user.name }} Simpson</p>
+    <p>Idade: {{ user.age }}</p>
+  {% endfor %}
 {% endblock %}

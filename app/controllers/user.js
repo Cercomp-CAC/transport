@@ -1,7 +1,7 @@
 exports.list = function (req, res) {
-  var User = require("../models/users")();
+  var users = require("../models/users")();
 
   res.render('user', {
-    user: User,
+    users: users,
   });
 };

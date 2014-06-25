@@ -1,8 +1,21 @@
 module.exports = function() {
-  var User = {
-    name: "Salviano",
-    age: 26,
-    fone: "6434111654"
-  };
-  return User;
+  var users = [
+    {
+      name: 'Homer',
+      age: 44
+    },
+    {
+      name: 'Bart',
+      age: 10
+    },
+    {
+      name: 'Lisa',
+      age: 8
+    },
+    {
+      name: 'Marge',
+      age: 41
+    }
+  ];
+  return users;
 };

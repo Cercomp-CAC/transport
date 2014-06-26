@@ -1,22 +1,23 @@
 module.exports = function(app, express) {
 
-  var config = require('./config')
-    , swig   = require('swig');
+  var config     = require('./config')
+    , swig       = require('swig')
+    , morgan     = require('morgan')
+    , bodyParser = require('body-parser');
 
-  // Configuration
-  app.configure(function(){
-    app.set('port', config.port);
+  app.set('port', config.port);
 
-    // views config
-    app.engine('html', swig.renderFile);
-    app.set('view engine', 'html');
-    app.set('views', config.root + '/app/views');
+  // views config
+  app.engine('html', swig.renderFile);
+  app.set('view engine', 'html');
+  app.set('views', config.root + '/app/views');
 
-    if (app.get('env') === 'development') {
-        app.use(express.logger('dev'));
-    }
-    app.use(express.bodyParser());
-    app.use(express.static(config.root + '/public'));
-    app.use(app.router);
-  });
+  app.use(express.static(config.root + '/public'));
+
+  if (app.get('env') === 'development') {
+      app.use(morgan('dev'));
+  }
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 };

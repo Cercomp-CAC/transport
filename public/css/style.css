@@ -13,10 +13,6 @@ body {
     background-color: #fff;
 }
 
-.form-signin .checkbox {
-    font-weight: normal;
-}
-
 .form-signin .form-control:focus {
     z-index: 2;
 }
@@ -32,3 +28,9 @@ body {
 .input-email {
     margin-bottom: 6px;
 }
+
+.form-signin-heading {
+    text-align: left;
+    margin-bottom: 20px;
+}
+

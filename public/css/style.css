@@ -1,11 +1,11 @@
 body {
-    background-color: #eee;
+    background-image: url('/images/sos.png');
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
 .form-signin {
-    max-width: 360px;
+    max-width: 380px;
     padding: 30px;
     margin: 0 auto;
     border: 1.7px solid #e5e5e5;
@@ -25,11 +25,14 @@ body {
     box-sizing: border-box;
 }
 
-.input-email {
+.form-group {
     margin-bottom: 10px;
 }
 
+.btn-login {
+    margin-top: 10px;
+}
+
 .form-signin-heading {
-    text-align: left;
     margin-bottom: 20px;
 }

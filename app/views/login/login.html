@@ -1,23 +1,29 @@
 {% extends "../layouts/default.html" %}
 
 {% block content %}
-  <div class="form-signin">
-    <form role="form" action="/login" method="POST">
-      <h1 class="form-signin-heading"><i class="fa fa-sign-in"></i> login</h1>
-      <div class="input-email input-group margin-bottom-sm">
-        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-        <input class="form-control" type="email" name="user[email]" placeholder="Email" autofocus>
+  <div class='form-signin'>
+    <form role='form' action='/login' method='POST'>
+      <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Login</h1>
+
+      <div class='form-group'>
+        <div class='input-group'>
+          <span class='input-group-addon'><i class='fa fa-envelope-o fa-fw'></i></span>
+          <input class='form-control' type='email' name='user[email]' placeholder='Email' autofocus>
+        </div>
       </div>
-      <div class="form-group input-group">
-        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-        <input class="form-control" type="password" name="user[password]" placeholder="Senha">
+
+      <div class='form-group'>
+        <div class='input-group'>
+          <span class='input-group-addon'><i class='fa fa-key fa-fw'></i></span>
+          <input class='form-control' type='password' name='user[password]' placeholder='Senha'>
+        </div>
       </div>
-      <button type="submit" class="btn btn-lg btn-block btn-primary">Entrar</button>
+      <button type='submit' class='btn btn-lg btn-primary btn-login'>Entrar</button>
     </form>
 
     <hr>
 
-    <p>Precisa de uma conta? <a href="/login">Inscreva-se</a></p>
-    <p>Ou volte para a <a href="/">página inicial</a></p>
+    <p>Precisa de uma conta? <a href='/login'>Inscreva-se</a></p>
+    <p>Ou volte para a <a href='/'>página inicial</a></p>
   </div>
 {% endblock %}

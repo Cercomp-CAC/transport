@@ -30,6 +30,28 @@ module.exports = function(grunt) {
         dest: 'public/js/production.min.js'
       }
     },
+    nodemon: {
+      dev: {
+        script: 'server.js',
+      }
+    },
+    watch: {
+      options: {
+        livereload: true
+      },
+      css: {
+        files: [ 'public/**/*.css' ],
+        tasks: [ 'concat:css' ]
+      }
+    },
+    concurrent: {
+      dev: {
+        tasks: ['nodemon', 'watch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
+    },
     express: {
       prod: {
         options: {
@@ -45,8 +67,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('server', ['express:prod']);
+  grunt.registerTask('productionServer', ['express:prod']);
   grunt.registerTask('heroku', ['shell:bower', 'concat', 'uglify']);
+  grunt.registerTask('server', ['concurrent']);
 };

@@ -1,8 +1,21 @@
-var express = require('express')
-  , app     = express();
+var express  = require('express')
+  , passport = require('passport')
+  , mongoose = require('mongoose')
+  , config   = require('./config/config');
 
-require('./config/express')(app, express);
-require('./config/routes')(app);
+var app = express();
+
+// Configuration
+mongoose.connect(config.db.development);
+
+// Bootstrap passport config
+require('./config/passport')(passport);
+
+// Bootstrap application settings
+require('./config/express')(app, express, passport);
+
+// Bootstrap routes
+require('./config/routes')(app, passport);
 
 var port = app.get('port');
 

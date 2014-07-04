@@ -1,11 +1,16 @@
 {% extends "../layouts/default.html" %}
 
 {% block content %}
-  <div class='jumbotron text-center'>
-    <h1><span class='fa fa-lock'></span> Node Authentication</h1>
+<div class='jumbotron text-center'>
+  <h1>Sistema de Viagens e Veículos</h1>
 
-    <p>Login or Register with:</p>
+  <p>Faça o login na sua conta e preencha o formulário de reserva de veículo</p>
 
-    <a href='/login' class='btn btn-default'><span class='fa fa-user'></span> Local Login</a>
-  </div>
+  <p><a href='/login' class='btn btn-lg btn-primary' role="button"><span class='fa fa-user'></span> Faça o login</a></p>
+
+  <hr>
+
+  <p>Primeira vez aqui? <a href="/signup">Crie um conta</a></p>
+
+</div>
 {% endblock %}

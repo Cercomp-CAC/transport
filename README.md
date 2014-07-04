@@ -5,12 +5,12 @@ transport
 
 Sistema de viagens e veículos
 
-## Documentação
+### Documentação
 
-### Instalar as dependências do projeto
+## Instalar as dependências do projeto
 
       $ npm install
 
-### Rodar o projeto
+## Rodar o projeto
 
       $ npm start

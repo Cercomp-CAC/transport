@@ -1,7 +1,5 @@
-exports.list = function (req, res) {
-  var users = require("../models/users")();
-
-  res.render('user', {
-    users: users,
+exports.profile = function (req, res) {
+  res.render('user/profile', {
+    user: req.user,
   });
 };

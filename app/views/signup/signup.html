@@ -2,12 +2,14 @@
 
 {% block content %}
   <div class='form-signin'>
-    <form role='form' action='/login' method='POST'>
-      <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Login</h1>
+    <form role='form' action='/signup' method='POST'>
+      <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Signup</h1>
 
       <!-- show any messages that come back with authentication -->
-      {% if message.length %}
-        <div class="alert alert-danger">{{ message }}</div>
+      {% if messageFailure.length %}
+        <div class="alert alert-danger">{{ messageFailure }}</div>
+      {% elseif messageSuccess.length %}
+        <div class="alert alert-success">{{ messageSuccess }}</div>
       {% endif %}
 
       <div class='form-group'>
@@ -23,15 +25,12 @@
           <input class='form-control' type='password' name='password' placeholder='Senha'>
         </div>
       </div>
-
-      <span class="forgot-password"><a href="/recovery">Esqueceu a senha?</a></span>
-
-      <button type='submit' class='btn btn-lg btn-primary btn-login'>Entrar</button>
+      <button type='submit' class='btn btn-lg btn-primary btn-login'>Criar conta</button>
     </form>
 
     <hr>
 
-    <p>Precisa de uma conta? <a href='/signup'>Inscreva-se</a></p>
+    <p>Já possui uma conta? <a href='/login'>Faça o login</a></p>
     <p>Ou volte para a <a href='/'>página inicial</a></p>
   </div>
 {% endblock %}

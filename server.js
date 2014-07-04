@@ -1,12 +1,14 @@
 var express  = require('express')
   , passport = require('passport')
-  , mongoose = require('mongoose')
-  , config   = require('./config/config');
+  , mongoose = require('mongoose');
 
 var app = express();
 
 // Configuration
-mongoose.connect(config.db.development);
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config/config')[env];
+
+mongoose.connect(config.db);
 
 // Bootstrap passport config
 require('./config/passport')(passport);

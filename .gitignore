@@ -32,3 +32,6 @@ public/js/production.min.js
 public/css/build.css
 
 .DS_Store
+
+# Config file
+config/config.js

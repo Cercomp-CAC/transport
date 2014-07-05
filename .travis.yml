@@ -3,7 +3,6 @@ node_js:
   - '0.10'
 before_script:
   - node_modules/grunt-cli/bin/grunt heroku --verbose
-  - make decrypt_conf
 deploy:
   app:
     master: transport-staging

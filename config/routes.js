@@ -1,8 +1,8 @@
 var auth = require("./middlewares/authorization");
 
 module.exports = function(app, passport) {
-  var home     = require('../app/controllers/home')
-    , user     = require('../app/controllers/user');
+  var home = require('../app/controllers/home')
+    , user = require('../app/controllers/user');
 
   app.get('/', home.index);
 

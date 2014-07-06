@@ -10,6 +10,7 @@ module.exports = function(app, passport) {
 
   app.route('/login')
     .get(register.login)
+
     .post(passport.authenticate('local-login', {
       successRedirect: '/profile',
       failureRedirect: '/login',
@@ -18,6 +19,7 @@ module.exports = function(app, passport) {
 
   app.route('/signup')
     .get(signup.signup)
+
     .post(passport.authenticate('local-signup', {
       successRedirect: '/signup',
       failureRedirect: '/signup',

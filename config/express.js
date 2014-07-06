@@ -25,10 +25,9 @@ module.exports = function(app, express, passport) {
     app.use(morgan('dev'));
   }
 
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded());
   app.use(cookieParser()); // read cookies (needed for auth)
-  app.use(bodyParser.urlencoded({
-    extended: true
-  }));
 
   // required for passport
   app.use(session( { secret: config.sessionSecret } ));

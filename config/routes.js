@@ -2,14 +2,12 @@ var auth = require("./middlewares/authorization");
 
 module.exports = function(app, passport) {
   var home     = require('../app/controllers/home')
-    , login    = require('../app/controllers/login')
-    , user     = require('../app/controllers/user')
-    , signup   = require('../app/controllers/signup');
+    , user     = require('../app/controllers/user');
 
   app.get('/', home.index);
 
   app.route('/login')
-    .get(login.login)
+    .get(user.login)
 
     .post(passport.authenticate('local-login', {
       successRedirect: '/profile',
@@ -18,7 +16,7 @@ module.exports = function(app, passport) {
     }));
 
   app.route('/signup')
-    .get(signup.signup)
+    .get(user.signup)
 
     .post(passport.authenticate('local-signup', {
       successRedirect: '/signup',
@@ -26,10 +24,7 @@ module.exports = function(app, passport) {
       failureFlash: true
     }));
 
-  app.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/');
-  });
+  app.get('/logout', user.logout);
 
   app.get('/profile', auth.isLoggedIn, user.profile);
 

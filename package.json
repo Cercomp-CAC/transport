@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "./node_modules/grunt-cli/bin/grunt server",
-    "postinstall": "node_modules/grunt-cli/bin/grunt heroku",
+    "postinstall": "node_modules/grunt-cli/bin/grunt heroku --verbose",
     "test": "node_modules/.bin/mocha --reporter spec test/*.js"
   },
   "repository": {

@@ -7,21 +7,22 @@ module.exports = function(app, passport) {
     , signup   = require('../app/controllers/signup');
 
   app.get('/', home.index);
-  app.get('/login', register.login);
 
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/profile',
-    failureRedirect: '/login',
-    failureFlash: true // allow flash messages
-  }));
+  app.route('/login')
+    .get(register.login)
+    .post(passport.authenticate('local-login', {
+      successRedirect: '/profile',
+      failureRedirect: '/login',
+      failureFlash: true
+    }));
 
-  app.get('/signup', signup.signup);
-
-  app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/signup',
-    failureRedirect: '/signup',
-    failureFlash: true
-  }));
+  app.route('/signup')
+    .get(signup.signup)
+    .post(passport.authenticate('local-signup', {
+      successRedirect: '/signup',
+      failureRedirect: '/signup',
+      failureFlash: true
+    }));
 
   app.get('/logout', function(req, res) {
     req.logout();

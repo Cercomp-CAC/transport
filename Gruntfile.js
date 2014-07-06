@@ -3,7 +3,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     shell: {
       bower: {
-        command: 'node_modules/bower/bin/bower install'
+        command: './node_modules/bower/bin/bower install'
+      },
+      mocha: {
+        command: './node_modules/mocha/bin/mocha --reporter spec test/*.js'
       }
     },
     concat: {
@@ -40,9 +43,13 @@ module.exports = function(grunt) {
         livereload: true
       },
       css: {
-        files: [ 'public/**/*.css' ],
+        files: [ 'public/css/style.css' ],
         tasks: [ 'concat:css' ]
-      }
+      },
+      testMocha: {
+        files: [ 'app/**/*.js', 'config/**/*.js', 'test/**/*.js' ],
+        tasks: [ 'shell:mocha' ]
+      },
     },
     concurrent: {
       dev: {

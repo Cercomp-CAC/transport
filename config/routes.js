@@ -36,7 +36,7 @@ module.exports = function(app, passport) {
     res.render('user/recovery');
   });
 
-  app.get('/faq', function(req, res) {
-    res.render('faq/faq');
-  });
+  // app.get('/faq', function(req, res) {
+  //   res.render('faq/faq');
+  // });
 };

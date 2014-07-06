@@ -25,12 +25,17 @@ module.exports = function(app, express, passport) {
     app.use(morgan('dev'));
   }
 
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded());
+  // app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser()); // read cookies (needed for auth)
 
   // required for passport
-  app.use(session( { secret: config.sessionSecret } ));
+  app.use(session({
+    secret: config.sessionSecret,
+    resave: false,
+    saveUninitialized: false
+  }));
+
   app.use(passport.initialize());
   app.use(passport.session()); // persistent login sessions
   app.use(flash()); // use connect-flash for flash messages stored in session

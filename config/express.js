@@ -26,14 +26,14 @@ module.exports = function(app, express, passport) {
   }
 
   // app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser()); // read cookies (needed for auth)
 
   // required for passport
   app.use(session({
-    secret: config.sessionSecret,
-    resave: false,
-    saveUninitialized: false
+    resave: false, // don't save session if unmodified
+    saveUninitialized: false, // don't create session until something stored
+    secret: config.sessionSecret
   }));
 
   app.use(passport.initialize());

@@ -11,7 +11,6 @@ module.exports = function(app, express, passport) {
 
   var env    = app.get('env');
   var config = require('./config')[env];
-  // console.log(config.db);
 
   app.set('port', config.port);
   app.use(favicon(config.root + '/public/images/favicon.ico'));

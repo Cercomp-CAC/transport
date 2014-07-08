@@ -11,6 +11,7 @@ module.exports = function(app, express, passport) {
 
   var env    = app.get('env');
   var config = require('./config')[env];
+  // console.log(config.db);
 
   app.set('port', config.port);
   app.use(favicon(config.root + '/public/images/favicon.ico'));
@@ -36,7 +37,8 @@ module.exports = function(app, express, passport) {
     saveUninitialized: false, // don't create session until something stored
     secret: config.sessionSecret,
     store: new MongoStore({
-      db: config.db,
+      url: config.db,
+      auto_reconnect: true,
     })
   }));
 

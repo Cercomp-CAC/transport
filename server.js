@@ -23,7 +23,7 @@ var port = app.get('port');
 
 app.listen(port, function() {
   console.log('Express serving listening on port %d in %s mode', port, app.settings.env);
-  console.log('Mongo database connection string: ', + config.db);
+  console.log('Mongo database connection string: ' + config.db);
 });
 
 module.exports = app;

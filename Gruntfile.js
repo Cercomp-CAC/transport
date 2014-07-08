@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         options: {
           ignore: ['node_modules/**'],
           ext: 'js,html',
-          watch: ['app']
+          watch: ['app', 'server.js']
         }
       }
     },

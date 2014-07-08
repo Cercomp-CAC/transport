@@ -5,11 +5,12 @@ module.exports = function(app, express, passport) {
     , cookieParser = require('cookie-parser')
     , bodyParser   = require('body-parser')
     , session      = require('express-session')
+    , MongoStore   = require('connect-mongo')(session)
     , favicon      = require('serve-favicon')
     , flash        = require('connect-flash');
 
-  var env    = app.get('env')
-    , config = require('./config')[env];
+  var env    = app.get('env');
+  var config = require('./config')[env];
 
   app.set('port', config.port);
   app.use(favicon(config.root + '/public/images/favicon.ico'));
@@ -33,7 +34,10 @@ module.exports = function(app, express, passport) {
   app.use(session({
     resave: false, // don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
-    secret: config.sessionSecret
+    secret: config.sessionSecret,
+    store: new MongoStore({
+      db: config.db,
+    })
   }));
 
   app.use(passport.initialize());

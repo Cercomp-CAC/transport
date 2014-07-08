@@ -12,6 +12,14 @@ body {
   background-color: #fff;
 }
 
+.btn-home-lg {
+  width: 190px;
+}
+
+.btn-login-lg {
+  width: 90px;
+}
+
 .form-signin {
   max-width: 400px;
   padding: 30px;

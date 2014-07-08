@@ -3,7 +3,8 @@
 {% block content %}
   <div class='form-signin'>
     <form role='form' action='/signup' method='POST'>
-      <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Signup</h1>
+      <h1 class='form-signin-heading'><span class='fa fa-sign-in'> Signup</span></h1>
+      {# <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Signup</h1> #}
 
       <!-- show any messages that come back with authentication -->
       {% if messageFailure.length %}

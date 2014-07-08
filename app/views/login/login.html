@@ -3,7 +3,8 @@
 {% block content %}
   <div class='form-signin'>
     <form role='form' action='/login' method='POST'>
-      <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Login</h1>
+      <h1 class='form-signin-heading'><span class='fa fa-sign-in'> Login</span></h1>
+      {# <h1 class='form-signin-heading'><i class='fa fa-sign-in'></i> Login</h1> #}
 
       <!-- show any messages that come back with authentication -->
       {% if message.length %}
@@ -26,7 +27,7 @@
 
       <span class="forgot-password"><a href="/recovery">Esqueceu a senha?</a></span>
 
-      <button type='submit' class='btn btn-lg btn-primary btn-login'>Entrar</button>
+      <button type='submit' class='btn btn-lg btn-login-lg btn-primary btn-login'>Entrar</button>
     </form>
 
     <hr>

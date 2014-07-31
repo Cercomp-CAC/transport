@@ -32,13 +32,13 @@ module.exports = function(app, express, passport) {
 
   // required for passport
   app.use(session({
-    resave: false, // don't save session if unmodified
-    saveUninitialized: false, // don't create session until something stored
     secret: config.sessionSecret,
     store: new MongoStore({
       url: config.db,
       auto_reconnect: true,
-    })
+    }),
+    resave: false, // don't save session if unmodified
+    saveUninitialized: false, // don't create session until something stored
   }));
 
   app.use(passport.initialize());
